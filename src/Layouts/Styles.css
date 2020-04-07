@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+.table {
+    margin-top: 30px;
+    display: block;
+    width: 1000px;
+    border: 3px solid rgb(255, 102, 0);
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+#first,
+#sixth {
+    width: 40px;
+    padding-left: 20px;
+}
+
+#second {
+    width: 250px;
+}
+
+#third {
+    width: 180px;
+}
+
+#fourth {
+    width: 250px;
+}
+
+#fifth {
+    width: 130px;
+}
+
+
+tr.table-row:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+thead {
+    display: block;
+    border-bottom: 3px solid rgb(255, 102, 0);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+thead tr {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.fa-sort {
+    color: orange;
+}
+
+#first:hover,
+#third:hover,
+#fourth:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.fa-edit {
+    color: orange;
+}
+
