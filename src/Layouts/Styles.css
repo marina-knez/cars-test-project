@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@300&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -6,6 +8,8 @@ body {
     align-items: center;
     justify-content: center;
 } 
+
+/* TABLE */
 
 .table {
     margin-top: 30px;
@@ -71,3 +75,19 @@ thead tr {
     color: orange;
 }
 
+/* FILTER */
+
+.input-field {
+    margin-top: 20px;
+}
+
+.filter {
+    border: 3px solid orange;
+    border-radius: 8px;
+    height: 30px;
+    width: 300px;
+    padding: 5px 20px 5px 20px;
+    font-size: 16px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+}

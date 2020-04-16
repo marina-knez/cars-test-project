@@ -10,18 +10,10 @@ class Filter extends Component {
     render() {
         const {filter} = this.props.store
 
-        return(
-        <div className="container">
-            <select className="list">
-                <option disabled hidden selected>Find a Car by:</option>
-                <option value="Name">Model</option>
-                <option value="Model Id">Model Id</option>
-            </select>
+        return(            
             <div className="input-field">
-                <input className="filter" value={filter} placeholder="Find a Car" onChange={this.filter.bind(this)}/>
+                <input className="filter" value={filter} placeholder="Search..." onChange={this.filter.bind(this)}/>
             </div>
-        </div>
-        
         )
     }
 }

@@ -1,4 +1,4 @@
-import {observable, computed} from 'mobx'
+import {observable, computed, action} from 'mobx'
 
 class carStore {
 
@@ -523,16 +523,39 @@ class carStore {
         }
     ]
 
+    @observable sort = false
+
     @observable filter = ""
 
-   /* @computed get filteredList() {
-        console.log(this.carData.model)
-        
-    }*/
-
-    @computed get sortedName() {
-        return this.carData.sort((a,b) => a.model - b.model)
+    @computed get filteredData() {
+        var data = this.carData.filter(item => {
+            return (
+                item.model.toLowerCase().indexOf(this.filter) !== -1 ||
+                item.modelId.toLowerCase().indexOf(this.filter) !== -1
+            )
+        })
+        return data
     }
+
+    @computed get sortedData() {
+        var sorted = this.filteredData
+        if (this.sort) {
+            sorted = this.filteredData.slice().sort((a,b) => {
+                if (a.id < b.id) {
+                    return 1;
+                } else if (a.id > b.id) {
+                    return -1;
+                }
+                return 0
+            })
+        }
+        return sorted
+    }
+
+    @action toggleSorted() {
+        this.sort = !this.sort
+    }
+
 }
 
 var store = new carStore()

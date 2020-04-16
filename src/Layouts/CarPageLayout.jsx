@@ -11,10 +11,10 @@ class CarPageLayout extends Component {
     render() {
         return (
             <div>
-                <Filter store={store} filter={store.filter} />
+                <Filter store={store} filter={this.filter}/>
                 <table className="table">
-                    <Header store={store} name={store.sortedName} />
-                    <CarList store={store} filter={store.filter} />
+                    <Header store={store} sortHandler={this.sortHandler}/>
+                    <CarList store={store} />
                 </table>
             </div>
         )
