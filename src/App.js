@@ -1,13 +1,20 @@
-import React from 'react';
-import CarPageLayout from './Layouts/CarPageLayout'
+import React, {Component} from 'react';
+import {observer} from 'mobx-react'
+import ListPage from './Pages/ListPage'
+import EditPage from './Pages/EditPage'
 import store from './Stores/carStore'
 
-function App() {
-  return (
-    <div className="App">
-        <CarPageLayout store={store}/>
-    </div>
-  );
+@observer
+class App extends Component {
+  render() {
+    return (
+        this.props.store.isEditing ? (
+          <EditPage store={store} />
+        ) : (
+          <ListPage store={store} />
+        )
+    )
+  }
 }
 
 export default App;

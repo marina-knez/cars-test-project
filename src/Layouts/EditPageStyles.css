@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@300&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* EDIT FORM */
+h1 {
+    color: green;
+    letter-spacing: 3px;
+}
+
+h4 {
+    color: green;
+    letter-spacing: 3px;
+}
+
+.edit {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input {
+    border: 2px solid orange;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    font-size: 18px;
+    font-family: 'Roboto Mono', cursive;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* BUTTONS */
+.buttons {
+     padding-right: 50px;
+}
+
+.save,
+.cancel {
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    width: 130px;
+    padding: 5px;
+    border: 2px solid orange;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 50px;
+}
+
+.save:hover,
+.cancel:hover {
+    background-color: #eee;
+    border: 4px solid orange;
+}
+
+.save:focus,
+.cancel:focus {
+    outline: none;
+}
