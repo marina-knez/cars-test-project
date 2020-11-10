@@ -1,20 +1,55 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react'
-import ListPage from './Pages/ListPage'
-import EditPage from './Pages/EditPage'
-import store from './Stores/carStore'
+
+import './layouts/MainLayoutStyles.css'
+import store from './common/Utilities'
+import MainLayout from './layouts/MainLayout'
+import MakeModelPageLayout from './layouts/MakeModelPageLayout'
+import AddPageLayout from './layouts/AddPageLayout'
+import EditPageLayout from './layouts/EditPageLayout'
 
 @observer
 class App extends Component {
   render() {
+    let page = null
+    if (store.addNew) {
+      page = (
+        <div>
+          <AddPageLayout store={store} />
+        </div>
+      )
+    } else if (store.isEditing) {
+      page = (
+        <div>
+          <EditPageLayout store={store} car={store.car} />
+        </div>
+      )
+    } else {
+      page = (
+        <div>
+          <MakeModelPageLayout store={store} car={store.car} />
+        </div>
+      )
+    }
+
     return (
-        this.props.store.isEditing ? (
-          <EditPage store={store} />
-        ) : (
-          <ListPage store={store} />
-        )
+        <div>
+          <MainLayout 
+              store={store}
+              mainCenter={page} 
+              footer="Copyright © 2020 FastLaneCarSales. All Rights Reserved"
+
+              layoutClass="layout"
+              headerClass="header"
+              mainClass="main" 
+              mainLeftClass="main-left"
+              mainCenterClass="main-center"
+              mainRightClass="main-right"
+              footerClass="footer"
+          />
+        </div>
     )
   }
 }
 
-export default App;
+export default App

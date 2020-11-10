@@ -1,28 +1,25 @@
 import React, {Component} from 'react'
 import {observer} from 'mobx-react'
-
 import '../pages/AddEditPageStyles.css'
 import store from '../common/Utilities'
-import EditMakePage from '../pages/EditMakePage'
-import EditModelPage from '../pages/EditModelPage'
+import AddMakePage from '../pages/AddMakePage'
+import AddModelPage from '../pages/AddModelPage'
 import MainLayout from '../layouts/MainLayout'
 
 @observer
-class EditPageLayout extends Component {
+class AddPageLayout extends Component {
     render() {
-        const {car} = this.props
-        
         let page = null
-        if (store.editModel) {
+        if (store.addModel) {
             page = (
                 <div className="edit">
-                    <EditModelPage store={store} car={car} id={car.id} submitForm={this.submitForm} />
+                    <AddModelPage store={store} handleSubmit={this.handleSubmit} addCarModel={this.addCarModel} onCancel={this.onCancel} />
                 </div>
             )
         } else {
             page = (
                 <div className="edit">
-                    <EditMakePage store={store} car={car} id={car.id} submitForm={this.submitForm} />
+                    <AddMakePage store={store} handleSubmit={this.handleSubmit} addCarMake={this.addCarMake} onCancel={this.onCancel} />
                 </div>
             )
         }
@@ -35,4 +32,4 @@ class EditPageLayout extends Component {
     }
 }
 
-export default EditPageLayout
+export default AddPageLayout

@@ -1,18 +1,25 @@
 import React, {Component} from 'react'
 import {observer} from 'mobx-react'
 
+import store from '../common/Utilities'
+
 @observer
 class Filter extends Component {
     filter(e) {
-        this.props.store.filter = e.target.value.toLowerCase()
+        store.filter = e.target.value.toLowerCase()
     }
-
+    
     render() {
-        const {filter} = this.props.store
+        const {filter} = store
 
-        return(            
+        return (
             <div className="input-field">
-                <input className="filter" value={filter} placeholder="Search..." onChange={this.filter.bind(this)}/>
+                <input 
+                    className="filter"
+                    value={filter}
+                    placeholder="Search..." 
+                    onChange={this.filter.bind(this)}
+                />
             </div>
         )
     }

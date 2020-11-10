@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Roboto+Mono:wght@300&display=swap');
+
+.layout {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: url('../img/4909201-8594.png');
+    background-size: 1000px 300px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-top: 5px solid #aaa;
+    border-bottom: 5px solid #aaa;
+    height: 72px;
+    margin: 0;
+    z-index: 100;
+}
+
+.main {
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-left {
+    position: relative;
+}
+
+.main-center {
+    position: relative;
+}
+
+.main-right {
+    position: relative;
+}
+
+.footer {
+    border-top: 5px solid #aaa;
+    border-bottom: 5px solid #aaa;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    font-family: 'Comic Neue', cursive;
+    color: green;
+}

@@ -7,14 +7,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-} 
+}
 
 /* TABLE */
 
 .table {
     margin-top: 30px;
     display: block;
-    width: 1000px;
     border: 3px solid rgb(255, 102, 0);
     border-radius: 8px;
     font-size: 18px;
@@ -23,7 +22,7 @@ body {
 #first,
 #sixth {
     width: 40px;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 #second {
@@ -40,6 +39,10 @@ body {
 
 #fifth {
     width: 130px;
+}
+
+#sixth {
+    width: 100px;
 }
 
 
@@ -62,9 +65,11 @@ thead tr {
 
 .fa-sort {
     color: orange;
+    padding-left: 5px;
 }
 
 #first:hover,
+#second:hover,
 #third:hover,
 #fourth:hover {
     background-color: #eee;
@@ -73,6 +78,13 @@ thead tr {
 
 .fa-edit {
     color: orange;
+    padding-left: 25px;
+    padding-right: 8px;
+}
+
+.fa-trash-alt {
+    color: rgb(235, 13, 13);
+    padding-left: 10px;
 }
 
 /* FILTER */
@@ -123,3 +135,15 @@ thead tr {
     border: 4px solid orange;
 }
 
+.fa-plus-circle {
+    color: green;
+    font-size: 30px;
+    margin-right: 15px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}

@@ -37,6 +37,7 @@ input {
     border-left: none;
     font-size: 18px;
     font-family: 'Roboto Mono', cursive;
+    width: 450px;
 }
 
 input:focus {
@@ -70,4 +71,8 @@ input:focus {
 .save:focus,
 .cancel:focus {
     outline: none;
+}
+
+a {
+    text-decoration: none;
 }

@@ -1,17 +1,23 @@
 import React, {Component} from 'react'
 import {observer} from 'mobx-react'
+import store from '../common/Utilities'
 
 @observer
 class Pagination extends Component {
-
     handleClick(e) {
-        this.props.store.currentPage = Number(e.target.id)
+        store.currentPage = Number(e.target.id)
+        store.activeObject = store.currentPage
     }
 
 
     render () {
 
-        const {sortedData, carsPerPage} = this.props.store
+        const {sortedData, carsPerPage, activeObject} = store
+
+        const styleActive = {
+            backgroundColor: "orange",
+            border: "2px solid grey"
+        }
 
         const pageNumbers = [];
             for (let i = 1; i <= Math.ceil(sortedData.length / carsPerPage); i++) {
@@ -22,8 +28,10 @@ class Pagination extends Component {
             <li 
                 key={number} 
                 id={number} 
-                className="number" 
-                onClick={this.handleClick.bind(this)}>
+                style={activeObject === number ? styleActive : null}
+                className="number"
+                onClick={this.handleClick.bind(this)}
+            >
                     {number}
             </li>
         ))
